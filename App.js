@@ -46,17 +46,15 @@ export default function App() {
       await poleSecond[Xadr][Yadr].current.doSomething();
       return 1
     }
-    let temp = BoxOneValueCount
 
     useImperativeHandle(ref, () => ({ 
       CountValue:  () => {
-        console.log(pole[X][Y])
+        //console.log(pole[X][Y])
         return props.valueCount;
       },
       doSomething:  async () => {
         const BoxOneValueCount =  await poleSecond[X][Y].current.CountValue();
         if (BoxOneValueCount>=3){
-          
           Animated.timing(
             imgSize,
             {
@@ -87,9 +85,6 @@ export default function App() {
      })), [];
 
 
-    //  const BoxOneValueCount =  temp 
-    //  console.log(BoxOneValueCount)
-    //BoxOneValueCount = temp;
      let mas = BoxOneValueCount *12;
      let bW = 2
      if (BoxOneValueCount ==0) bW=0;
